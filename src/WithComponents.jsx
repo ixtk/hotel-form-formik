@@ -30,7 +30,9 @@ function WithComponents() {
       // validateOnBlur={false}
     >
       {(formik) => {
-        console.log(formik.errors)
+        console.log(formik.values)
+
+        // formik.setFieldValue("roomType", "suite")
 
         return (
           <Form>
@@ -64,7 +66,34 @@ function WithComponents() {
                 />
               </div>
               <div className="view-btns">
-                <label>
+                {/* formik.values.roomView */}
+                <button
+                  className={`view-btn ${
+                    formik.values.roomView === "city" ? "selected" : ""
+                  }`}
+                  onClick={() => formik.setFieldValue("roomView", "city")}
+                >
+                  City
+                </button>
+                <button
+                  className={
+                    formik.values.roomView === "sea" ? "selected" : "view-btn"
+                  }
+                  onClick={() => formik.setFieldValue("roomView", "sea")}
+                >
+                  Sea
+                </button>
+                <button
+                  className={
+                    formik.values.roomView === "garden"
+                      ? "selected"
+                      : "view-btn"
+                  }
+                  onClick={() => formik.setFieldValue("roomView", "garden")}
+                >
+                  Garden
+                </button>
+                {/* <label>
                   <span>City</span>
                   <Field name="roomView" type="radio" value="city" />
                 </label>
@@ -75,7 +104,7 @@ function WithComponents() {
                 <label>
                   <span>Garden</span>
                   <Field name="roomView" type="radio" value="garden" />
-                </label>
+                </label> */}
                 <ErrorMessage
                   className="error"
                   component="span"
