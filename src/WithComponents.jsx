@@ -19,8 +19,6 @@ const submitForm = (values, submitProps) => {
 }
 
 function WithComponents() {
-  // render props
-
   return (
     <Formik
       initialValues={formInitialValues}
@@ -66,11 +64,11 @@ function WithComponents() {
                 />
               </div>
               <div className="view-btns">
-                {/* formik.values.roomView */}
                 <button
                   className={`view-btn ${
                     formik.values.roomView === "city" ? "selected" : ""
                   }`}
+                  type="button"
                   onClick={() => formik.setFieldValue("roomView", "city")}
                 >
                   City
@@ -79,6 +77,7 @@ function WithComponents() {
                   className={
                     formik.values.roomView === "sea" ? "selected" : "view-btn"
                   }
+                  type="button"
                   onClick={() => formik.setFieldValue("roomView", "sea")}
                 >
                   Sea
@@ -89,6 +88,7 @@ function WithComponents() {
                       ? "selected"
                       : "view-btn"
                   }
+                  type="button"
                   onClick={() => formik.setFieldValue("roomView", "garden")}
                 >
                   Garden
