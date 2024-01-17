@@ -10,5 +10,6 @@ export const formSchema = object({
     .min(4, "Minimum 4 characters")
     .required("Email is required"),
   roomType: string().required("Room type is required"),
+  roomView: string().required("Please select a room view"),
   termsAccepted: boolean().oneOf([true], "Please accept terms and conditions")
 })
