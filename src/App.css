@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  padding: 2px 6px;
+  width: 100%;
+}
+
+fieldset {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+legend {
+  font-size: 1.5rem;
+  margin-right: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.container {
+  display: flex;
+  gap: 32px;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  align-self: flex-end;
+  margin-top: 8px;
+  background-color: rgb(186, 23, 241);
+  color: white;
+  border: 1px solid rgb(178, 19, 231);
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+
+.required label::after {
+  content: " *";
+  color: rgb(180, 0, 0);
+}
+
+.error {
+  color: rgb(180, 0, 0);
+  font-size: smaller;
+}
+
+input {
+  display: block;
+  outline-offset: 5px;
+}
+
+.input-error {
+  border: 1px solid red;
+}
+
+.terms input {
+  width: auto;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+button:disabled {
+  background: rgb(218, 106, 255);
+  cursor: not-allowed;
+}
+
+.user-card {
+  border: 2px dashed rgb(218, 106, 255);
+  padding: 16px;
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+
+.user-card img {
+  display: block;
+  max-width: 100px;
+  border-radius: 50%;
+}
+
+.user-card h1 {
+  margin: 0;
+}
+
+.user-card p {
+  margin: 0.5rem 0;
+}
+
+.user-card .email {
+  background-color: rgb(246, 217, 255);
+  padding: 8px;
+  color: rgb(129, 22, 165);
+  border-radius: 5px;
+}
+
+.room-view label {
+  display: flex;
+  gap: 16px;
+}
+
+.room-view span {
+  min-width: 70px;
+}
+
+.room-view input {
+  width: auto;
+}
+
+.view-btn {
+  background-color: white;
+  color: rgb(129, 22, 165);
+  border: 1px solid;
+}
+
+.view-btn.selected {
+  background-color: rgb(178, 19, 231);
+  color: white;
+}
+
+.view-btns {
+  display: flex;
+  gap: 8px;
+}
