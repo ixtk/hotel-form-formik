@@ -3,23 +3,16 @@ import { formSchema } from "./formSchema"
 import { useState } from "react"
 import { UserCard } from "./UserCard"
 
-// const formInitialValues = {
-//   fullName: "",
-//   email: "",
-//   roomType: "double",
-//   termsAccepted: false,
-//   roomView: ""
-// }
+const formInitialValues = {
+  fullName: "",
+  email: "",
+  roomType: "double",
+  termsAccepted: false,
+  roomView: ""
+}
 
 function WithComponents() {
-  // TODO: roomType should not be selected
-  const [savedValues, setSavedValues] = useState({
-    fullName: "",
-    email: "",
-    roomType: "double",
-    termsAccepted: false,
-    roomView: ""
-  })
+  const [savedValues, setSavedValues] = useState(null)
   const [formVisible, setFormVisible] = useState(true)
 
   const submitForm = (values, submitProps) => {
@@ -35,10 +28,13 @@ function WithComponents() {
 
   return (
     <>
-      <UserCard savedValues={savedValues} setFormVisible={setFormVisible} />
+      <UserCard
+        savedValues={savedValues || {}}
+        setFormVisible={setFormVisible}
+      />
       {formVisible && (
         <Formik
-          initialValues={savedValues}
+          initialValues={savedValues || formInitialValues}
           onSubmit={submitForm}
           validationSchema={formSchema}
         >
